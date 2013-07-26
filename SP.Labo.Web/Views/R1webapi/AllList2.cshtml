@@ -8,9 +8,11 @@
 </div>
 <ul data-bind="foreach: productsList" id="products" data-get-url="@Url.Action("", "api/Products")">
 　<li data-bind="attr: { 'data-id': Id }">
-　　<div data-bind="text: Name"></div>
-　　<div data-bind="text: Category"></div>
-　　<div data-bind="text: Price"></div>
+     <table>
+　　    <tr data-bind="text: Name"></tr>
+　　    <tr data-bind="text: Category"></tr>
+　　    <tr data-bind="text: Price"></tr>
+     </table>
 　</li>
 </ul>
 

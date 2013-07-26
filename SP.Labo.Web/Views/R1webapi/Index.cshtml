@@ -5,19 +5,18 @@
 <h2>WebAPIを使ってみる</h2>
 
 <div>
-    <h5>APIの直リンク</h5>
-    @Html.ActionLink("全商品リスト", "", "api/Products" )
+    <h5>Step1</h5>
+    @Html.ActionLink("APIの直リンク", "", "api/Products" )
     <p>
-        jsonファイルの応答がある<br />
         これはいったい何の役に立つのか？
     </p>
 </div>
 
 <div>
-    <h5>APIのクライアントページ</h5>
-    @Html.ActionLink("全商品リスト", "AllList")
+    <h5>Step2</h5>
+    @Html.ActionLink("ページのスクリプトでAPIを読んでみる", "AllList")
     <p>
-        スクリプトで$.getJSONでapiを利用してみる<br/>
+        $.getJSONでapiを利用してみる<br/>
         応答を使ってスクリプトのDOM操作でWeb要素（リスト）を組み立てる→かなり面倒<br/>
         これなら、サーバーで編集されたHTML要素をAjax更新する以前の方法が楽でね？？<br/>
         ということで、これではわからない→APIの必要性
@@ -25,11 +24,11 @@
 </div>
 
 <div>
-    <h5>APIのクライアントページ　その２</h5>
-    @Html.ActionLink("全商品リスト", "AllList2")
+    <h5>Step3</h5>
+    @Html.ActionLink("jsonデータを利用するフレームワークを導入してみる", "AllList2")
     <p>
         apiのjson応答をknockoutjsに食わせてみる<br />
-        jsonレスポンスをViewmodelにセットするだけで、DOM操作コードは不要！ <br />
+        jsonレスポンスをViewmodelにセットするだけ。DOM操作コードは不要 <br />
         なるほど！このクライアントなら欲しくなる→WebAPI
     </p>
 </div>
