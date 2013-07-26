@@ -4,13 +4,17 @@
 
 <h2>WebAPIのクライアントサンプル　全商品リスト</h2>
 <div>
-    Scriptコードは「ページのソースを表示」してみてネ！
+    Scriptコードは<a href="javascript: dispSource()">「ページのソースを表示」</a>してみてネ！
 </div>
 <ul id="products" data-get-url="@Url.Action("", "api/Products")"></ul>
 <div id="test"></div>
 
 @section scripts{
     <script type="text/javascript">
+        function dispSource() {
+            location = "view-source:" + window.location;
+        }
+
         $(function () {
             // Send an AJAX request
             var url = $('#products').attr("data-get-url");
