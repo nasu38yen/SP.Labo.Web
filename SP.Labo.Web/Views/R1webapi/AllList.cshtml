@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "全商品リスト";
+}
+
+<h2>WebAPIのクライアントサンプル　全商品リスト</h2>
+<div>
+    Scriptコードは「ページのソースを表示」してみてネ！
+</div>
+<ul id="products" data-get-url="@Url.Action("", "api/Products")"></ul>
+<div id="test"></div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            // Send an AJAX request
+            var url = $('#products').attr("data-get-url");
+
+            $.getJSON(url,
+                function (data) {
+                    // On success, 'data' contains a list of products.
+                    $.each(data, function (key, val) {
+                        // Format the text to display.
+                        var str = val.Id + ': ' + val.Name;
+                        // Add a list item for the product.
+                        $('<li/>', { html: str }).appendTo($('#products'));
+                    });
+                });
+
+            // jquery参照の確認
+            //$('<li/>', { html: "ほげほげ" }).appendTo($('#products'));
+
+        });
+    </script>    
+}
+

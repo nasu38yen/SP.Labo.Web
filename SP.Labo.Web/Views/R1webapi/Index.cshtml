@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Web APIの実験室";
+}
+
+<h2>WebAPIを使ってみる</h2>
+
+<div>
+    <h5>APIの直リンク</h5>
+    @Html.ActionLink("全商品リスト", "", "api/Products" )
+    <p>
+        jsonファイルの応答がある<br />
+        これはいったい何の役に立つのか？
+    </p>
+</div>
+
+<div>
+    <h5>APIのクライアントページ</h5>
+    @Html.ActionLink("全商品リスト", "AllList")
+    <p>
+        スクリプトで$.getJSONでapiを利用してみる<br/>
+        応答を使ってスクリプトのDOM操作でWeb要素（リスト）を組み立てる→かなり面倒<br/>
+        これなら、サーバーで編集されたHTML要素をAjax更新する以前の方法が楽でね？？<br/>
+        ということで、これではわからない→APIの必要性
+    </p>
+</div>
+
+<div>
+    <h5>APIのクライアントページ　その２</h5>
+    @Html.ActionLink("全商品リスト", "AllList2")
+    <p>
+        apiのjson応答をknockoutjsに食わせてみる<br />
+        jsonレスポンスをViewmodelにセットするだけで、DOM操作コードは不要！ <br />
+        なるほど！このクライアントなら欲しくなる→WebAPI
+    </p>
+</div>
+<div>
+    <h5>（行き過ぎた極論を含む）オラ的まとめ</h5>
+    <ul>
+        <li>viewの表示にknockoutjsを使うことにする</li>
+        <li>→viewModelにデータを提供するURLが欲しくなる</li>
+        <li>→を提供するのがWebAPIの主な用途</li>
+        <li>いずれにしてもクライアント側の要請があってはじめて必要になる→api</li>
+        <li>逆に言えば、要請されるまで作成する必要はない</li>
+        <li>追加するapiControllerと既存のControllerで共通するデータアクセス部分</li>
+        <li>はリポジトリとして抽出できる</li>
+        <li>もともとデータアクセスがControllerから分離していれば、apiの追加はかなり簡単</li>
+        <li>apiを要求されたときにすぐ提供開始できるように既存のMVCプロジェクトも準備しておく</li>
+        <li>WebAPI＝json応答専用コントローラ。ってことで、とりあえず…</li>
+    </ul>
+
+</div>
