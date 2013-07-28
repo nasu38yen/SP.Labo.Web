@@ -6,9 +6,10 @@
         <title>@ViewBag.Title - P2研究室</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/base-min.css">
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
+        @RenderSection("styles", required: false)
     </head>
     <body>
         <header>

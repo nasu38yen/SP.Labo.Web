@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Pure Tableの試験";
+}
+
+@section styles{
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/tables-min.css">
+}
+
+<h2>商品リストにスタイルを適用する</h2>
+<div>
+    Scriptコードは<a href="javascript: dispSource()">「ページのソースを表示」</a>してみてネ！
+</div>
+<h5>スタイル適用前</h5>
+<table class="non-pure">
+    <thead>
+        <tr>
+            <th>品名</th>
+            <th>カテゴリ</th>
+            <th>価格</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: productsList" id="products" data-get-url="@Url.Action("", "api/Products")">
+        <tr data-bind="attr: { 'data-id': Id }">
+　　        <td data-bind="text: Name"></td>
+　　        <td data-bind="text: Category"></td>
+　　        <td data-bind="text: Price"></td>
+        </tr>
+    </tbody>
+
+</table>
+
+<h5>スタイル適用後</h5>
+<table class="pure-table pure-table-bordered">
+    <thead>
+        <tr>
+            <th>品名</th>
+            <th>カテゴリ</th>
+            <th>価格</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: productsList" id="products" data-get-url="@Url.Action("", "api/Products")">
+        <tr data-bind="attr: { 'data-id': Id }">
+　　        <td data-bind="text: Name"></td>
+　　        <td data-bind="text: Category"></td>
+　　        <td data-bind="text: Price"></td>
+        </tr>
+    </tbody>
+
+</table>
+
+@section scripts{
+    <script type="text/javascript">
+        function dispSource() {
+            location = "view-source:" + window.location;
+        }
+
+        $(function () {
+            function viewModel() {
+                var self = this;
+                self.productsList = ko.observableArray();
+            }
+
+            var viewModel = new viewModel();
+            ko.applyBindings(viewModel);
+
+            var url = $('#products').attr("data-get-url");
+
+            $.ajax({
+                type: "GET",
+                url: url,
+                data: { maxCount: 5 },
+                dataType: "json",
+                cache: false,
+                success: function (data) {
+                    viewModel.productsList(data);
+                }
+            });
+        });
+    </script>    
+}

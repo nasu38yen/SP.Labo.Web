@@ -186,6 +186,7 @@
     <Compile Include="Controllers\Api\ProductsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\R1webapiController.cs" />
+    <Compile Include="Controllers\R2CSSController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -195,6 +196,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\CSS\blog.css" />
+    <Content Include="Content\images\avatars\avatar1.png" />
+    <Content Include="Content\images\avatars\avatar2.png" />
+    <Content Include="Content\images\avatars\avatar3.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -312,6 +317,10 @@
     <Content Include="Views\R1webapi\Index.cshtml" />
     <Content Include="Views\R1webapi\AllList.cshtml" />
     <Content Include="Views\R1webapi\AllList2.cshtml" />
+    <Content Include="Views\R2CSS\Index.cshtml" />
+    <Content Include="Views\R2CSS\AllList.cshtml" />
+    <Content Include="Views\R2CSS\Layout.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
