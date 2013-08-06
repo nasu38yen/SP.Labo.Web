@@ -14,6 +14,7 @@ namespace SP.Labo.Web.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.returnUrl = Request.Url.AbsoluteUri;
             return View();
         }
 

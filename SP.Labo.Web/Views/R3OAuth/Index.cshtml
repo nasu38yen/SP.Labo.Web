@@ -1,13 +1,16 @@
 ﻿@{
-    ViewBag.Title = "ログインの実験室";
+    ViewBag.Title = "ログインの実験室";    
 }
 
 <h2>OAuthでログインしてみる</h2>
 
 <div>
     <h3>Step1</h3>
-    @Html.ActionLink("Googleアカウントでログイン", "Login", "Account", new { returnUrl = "/R3OAuth/" }, null)してみる
-        
+    @*
+    @Html.ActionLink("Googleアカウントでログイン", "Login", "Account", new { returnUrl = ViewBag.returnUrl }, null)してみる
+    *@
+    @Html.ActionLink("Googleアカウントでログイン", "Login", "Account", new { returnUrl = "~/R3OAuth/" }, null)してみる
+            
     <p>
         初めて使用するアカウントの場合、Googleで認証された後にプロファイル登録画面が表示される。<br/>
         次回以降は、「ログイン」ボタンをクリックするだけで前回ログインユーザーで自動で（パスワード入力の必要もなく）ログインする。<br/>
