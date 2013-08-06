@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebMatrix.WebData;
 
 namespace SP.Labo.Web.Controllers
 {
@@ -12,11 +13,6 @@ namespace SP.Labo.Web.Controllers
         // GET: /R3OAuth/
 
         public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult Login()
         {
             return View();
         }

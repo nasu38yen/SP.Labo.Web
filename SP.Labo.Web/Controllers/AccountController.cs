@@ -217,6 +217,8 @@ namespace SP.Labo.Web.Controllers
         [AllowAnonymous]
         public ActionResult ExternalLoginCallback(string returnUrl)
         {
+            // 外部認証後のリダイレクト先
+
             AuthenticationResult result = OAuthWebSecurity.VerifyAuthentication(Url.Action("ExternalLoginCallback", new { ReturnUrl = returnUrl }));
             if (!result.IsSuccessful)
             {
@@ -225,11 +227,15 @@ namespace SP.Labo.Web.Controllers
 
             if (OAuthWebSecurity.Login(result.Provider, result.ProviderUserId, createPersistentCookie: false))
             {
+                // 外部認証ユーザーに対応するメンバーシップユーザーがすでに登録されていればログインは成功する
                 return RedirectToLocal(returnUrl);
             }
 
             if (User.Identity.IsAuthenticated)
             {
+                // このパターンが？？
+                // 自サイトメンバーシップですでにログインしていて、さらにOAuth認証でログインしようとした場合か？？
+
                 // 現在のユーザーがログインしている場合、新しいアカウントを追加します
                 OAuthWebSecurity.CreateOrUpdateAccount(result.Provider, result.ProviderUserId, User.Identity.Name);
                 return RedirectToLocal(returnUrl);
@@ -246,6 +252,7 @@ namespace SP.Labo.Web.Controllers
 
         //
         // POST: /Account/ExternalLoginConfirmation
+        // OAuth認証ユーザーに対応するメンバーシップユーザー（サイト内）の登録　
 
         [HttpPost]
         [AllowAnonymous]

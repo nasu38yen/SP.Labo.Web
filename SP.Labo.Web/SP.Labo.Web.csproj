@@ -327,7 +327,6 @@
     <Content Include="Views\R2CSS\Layout.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\R3OAuth\Index.cshtml" />
-    <Content Include="Views\R3OAuth\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

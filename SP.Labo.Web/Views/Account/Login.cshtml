@@ -8,6 +8,7 @@
     <h1>@ViewBag.Title.</h1>
 </hgroup>
 
+@*
 <section id="loginForm">
 <h2>ローカル アカウントを使用してログインします。</h2>
 @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
@@ -39,9 +40,12 @@
     </p>
 }
 </section>
-
+*@
+@*
 <section class="social" id="socialLoginForm">
-    <h2>別のサービスを使用してログインしてください。</h2>
+*@
+<section id="socialLoginForm_2">
+    <h2>次のサービスを使用してログインしてください。</h2>
     @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
 </section>
 
