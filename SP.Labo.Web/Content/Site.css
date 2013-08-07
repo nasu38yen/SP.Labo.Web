@@ -109,12 +109,16 @@ h5, h6 {
     .main-content {
         background: url("../Images/accent.png") no-repeat;
         padding-left: 10px;
-        padding-top: 10px;
+        padding-top: 30px;
     }
 
     .featured + .main-content {
         background: url("../Images/heroAccent.png") no-repeat;
     }
+
+.main-content #site-map-path {
+    margin-top: -20px;
+} 
 
 header .content-wrapper {
     padding-top: 20px; 

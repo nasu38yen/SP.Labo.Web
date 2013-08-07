@@ -20,6 +20,9 @@
       </mvcSiteMapNode>
       <mvcSiteMapNode title="サイトマップ" controller="R4Sitemap" action="Index">
       </mvcSiteMapNode>
+      <mvcSiteMapNode title="HTML5" controller="R5ArtDesign" action="Index">
+        <mvcSiteMapNode title="DnD" controller="R5ArtDesign" action="DnD"/>
+      </mvcSiteMapNode>
     </mvcSiteMapNode>
 
   </mvcSiteMapNode>

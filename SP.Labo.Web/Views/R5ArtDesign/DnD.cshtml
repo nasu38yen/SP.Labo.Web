@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "DnDを試す";
+}
+
+@section styles{
+
+<style>
+    #desserts {
+        width: 500px;
+        height: 100px;
+        margin: 20px;
+        background-color: #F7DFD8;
+        border: 1px solid #cc3333;
+    }
+    
+    #dropbox {
+        width: 500px;
+        height: 100px;
+        margin: 20px;
+        background-color: #EFF7D6;
+        border: 1px solid #00cc00;
+        /**/
+        -khtml-user-drag: element;
+    }
+</style>
+}
+
+@section scripts{
+    <script type="text/javascript">
+
+        function f_dragstart(event) {
+            //ドラッグするデータのid名をDataTransferオブジェクトにセット
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        /***** ドラッグ要素がドロップ要素に重なっている間の処理 *****/
+        function f_dragover(event) {
+            //dragoverイベントをキャンセルして、ドロップ先の要素がドロップを受け付けるようにする
+            event.preventDefault();
+        }
+
+        /***** ドロップ時の処理 *****/
+        function f_drop(event) {
+            //ドラッグされたデータのid名をDataTransferオブジェクトから取得
+            var id_name = event.dataTransfer.getData("text");
+            //id名からドラッグされた要素を取得
+            var drag_elm = document.getElementById(id_name);
+            //ドロップ先にドラッグされた要素を追加
+            event.currentTarget.appendChild(drag_elm);
+
+            /*
+            var target = event.currentTarget;
+            var top = target.offsetTop + event.offsetY;
+            var left = target.offsetLeft + event.offsetX;
+            drag_elm.style.position = "absolute";
+            drag_elm.style.top = top + "px";            
+            drag_elm.style.left = left + "px";
+            */
+
+            //エラー回避のため、ドロップ処理の最後にdropイベントをキャンセルしておく
+            event.preventDefault();
+        }
+    </script>    
+}
+
+<h2>DnD 所属を移動する</h2>
+
+<div id="desserts" ondragover="f_dragover(event)" ondrop="f_drop(event)">
+    <img src="@Url.Content("~/Content/images/desserts/oisi_1.png")" id="oisi_1" alt="じゅれ" draggable="true" ondragstart="f_dragstart(event)">
+    <img src="@Url.Content("~/Content/images/desserts/oisi_2.png")" id="oisi_2" alt="ぷりん" draggable="true" ondragstart="f_dragstart(event)">
+    <img src="@Url.Content("~/Content/images/desserts/oisi_3.png")" id="oisi_3" alt="こおり" draggable="true" ondragstart="f_dragstart(event)">
+    <img src="@Url.Content("~/Content/images/desserts/oisi_4.png")" id="oisi_4" alt="あいす" draggable="true" ondragstart="f_dragstart(event)">
+</div>
+
+<div id="dropbox" ondragover="f_dragover(event)" ondrop="f_drop(event)">
+</div>
+
