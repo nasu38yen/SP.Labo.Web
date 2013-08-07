@@ -3,8 +3,25 @@
             xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
             xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
 
-  <mvcSiteMapNode title="Home" controller="Home" action="Index">
+  <mvcSiteMapNode title="ホーム" controller="Home" action="Index">
+    <!--
     <mvcSiteMapNode title="About" controller="Home" action="About"/>
+    -->
+    <mvcSiteMapNode title="検証" clickable="false" key="subMenu1">
+      <mvcSiteMapNode title="WebAPI" controller="R1webapi" action="Index">
+        <mvcSiteMapNode title="使用例１" controller="R1webapi" action="AllList"/>
+        <mvcSiteMapNode title="使用例２" controller="R1webapi" action="AllList2"/>
+      </mvcSiteMapNode>
+      <mvcSiteMapNode title="CSSフレームワーク" controller="R2CSS" action="Index">
+        <mvcSiteMapNode title="スタイル適用例" controller="R2CSS" action="AllList"/>
+        <mvcSiteMapNode title="レイアウトサンプル" controller="R2CSS" action="Layout"/>
+      </mvcSiteMapNode>
+      <mvcSiteMapNode title="OAuthログイン" controller="R3OAuth" action="Index">
+      </mvcSiteMapNode>
+      <mvcSiteMapNode title="サイトマップ" controller="R4Sitemap" action="Index">
+      </mvcSiteMapNode>
+    </mvcSiteMapNode>
+
   </mvcSiteMapNode>
 
 </mvcSiteMap>

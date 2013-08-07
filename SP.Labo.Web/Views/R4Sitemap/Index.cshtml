@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "サイトマップの実験室";
+
+    var strCode1 = "@Html.MvcSiteMap().SiteMapPath()";
+    var strCode2 = "@Html.MvcSiteMap().SiteMap()"; 
+}
+
+<h2>サイトにサイトマップを追加する</h2>
+
+<div>
+    <h3>Step1</h3>
+    <a href="http://www.nuget.org/packages/MvcSiteMapProvider.MVC4/">MvcSitemapProvider</a>をインストールする
+            
+    <p>
+        ASP.NET MVC自体にサイトマップに関する機能はないので<br/>
+        NugetでMvcSitemapProviderをインストールすると<br/>
+        プロジェクトにサイトマップに関するいくつかのファイルが追加される
+    </p>
+</div>
+
+<div>
+    <h3>Step2</h3>
+    サイトマップを編集する
+        
+    <p>
+        Mvc.sitemapファイルを編集してサイトのノードツリーを記述する<br/>
+        コントローラのActionメソッドに属性で指定する方法もある<br/>
+        全体を俯瞰する正にマップとしての意味で、Mvc.sitemapファイルにきちんと全部を定義するのが良いような気がする
+    </p>
+</div>
+
+<div>
+    <h3>Step3</h3>
+    テンプレートビュー(_Layout)に、パンくずリスト表示を追加する
+        
+    <p>
+        パンくずを表示したい場所に、 @strCode1<br/>
+        サイトマップページには、 @strCode2<br/>
+    </p>
+</div>
+
+<div>
+    <h3>まとめ</h3>
+    <ul>
+        <li>サイトツリーをXMLで定義する</li>
+        <li>コントローラのメソッドに属性で指定する方法もある</li>
+        <li>パンくず、サイトマップを表示させる箇所に対応するヘルパーメソッドを追加する</li>
+        <li>特に問題はなく、作業も簡単なので、これはやっておいたほうが良い</li>
+    </ul>
+</div>

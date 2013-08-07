@@ -36,6 +36,9 @@
         <div id="body">
             @RenderSection("featured", required: false)
             <section class="content-wrapper main-content clear-fix">
+                <div id="site-map-path" class="float-right">
+                    @Html.MvcSiteMap().SiteMapPath()
+                </div>
                 @RenderBody()
             </section>
         </div>
