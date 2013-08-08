@@ -292,6 +292,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\kinetic-4.5.5.js" />
     <Content Include="Scripts\knockout-2.3.0.debug.js" />
     <Content Include="Scripts\knockout-2.3.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -357,6 +358,7 @@
     <Content Include="Views\R5ArtDesign\Index.cshtml" />
     <Content Include="Views\R5ArtDesign\DnD.cshtml" />
     <Content Include="Views\R5ArtDesign\Canvas.cshtml" />
+    <Content Include="Views\R5ArtDesign\Kinetic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

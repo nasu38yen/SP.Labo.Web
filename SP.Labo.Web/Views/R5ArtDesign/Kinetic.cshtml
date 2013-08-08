@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "kineticjsを試す";
+}
+
+@section styles{
+<style>
+    #container {
+        background-color: white;
+        border: 1px dotted blue;
+    }
+</style>
+}
+
+<h2>DnDできる図形</h2>
+
+<div id="container"></div>
+
+@*
+*@
+
+@section scripts{
+    @Scripts.Render("~/bundles/kinetic")
+    <script type="text/javascript">
+        var stage = new Kinetic.Stage({
+            container: 'container',
+            width: 600,
+            height: 200
+        });
+        var layer = new Kinetic.Layer();
+        var rectX = stage.getWidth() / 2 - 50;
+        var rectY = stage.getHeight() / 2 - 25;
+
+        var box = new Kinetic.Rect({
+            x: rectX,
+            y: rectY,
+            width: 100,
+            height: 50,
+            fill: '#00D2FF',
+            stroke: 'blue',
+            strokeWidth: 4,
+            draggable: true
+        });
+
+        // add cursor styling
+        box.on('mouseover', function () {
+            document.body.style.cursor = 'pointer';
+        });
+        box.on('mouseout', function () {
+            document.body.style.cursor = 'default';
+        });
+
+        layer.add(box);
+        stage.add(layer);
+    </script>    
+}
+

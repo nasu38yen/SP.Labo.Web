@@ -31,5 +31,13 @@ namespace SP.Labo.Web.Controllers
         {
             return View();
         }
+
+        //
+        // GET: /R5ArtDesign/Kinetic
+
+        public ActionResult Kinetic()
+        {
+            return View();
+        }
     }
 }
