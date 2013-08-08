@@ -212,6 +212,8 @@
     <Content Include="Content\images\desserts\oisi_2.png" />
     <Content Include="Content\images\desserts\oisi_3.png" />
     <Content Include="Content\images\desserts\oisi_4.png" />
+    <Content Include="Content\images\desserts\かき氷.png" />
+    <Content Include="Content\images\desserts\フラッペ.gif" />
     <Content Include="Content\styles\blog.css" />
     <Content Include="Content\images\avatars\avatar1.png" />
     <Content Include="Content\images\avatars\avatar2.png" />
@@ -354,6 +356,7 @@
     <Content Include="Views\R4Sitemap\Index.cshtml" />
     <Content Include="Views\R5ArtDesign\Index.cshtml" />
     <Content Include="Views\R5ArtDesign\DnD.cshtml" />
+    <Content Include="Views\R5ArtDesign\Canvas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

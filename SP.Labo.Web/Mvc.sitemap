@@ -22,6 +22,7 @@
       </mvcSiteMapNode>
       <mvcSiteMapNode title="HTML5" controller="R5ArtDesign" action="Index">
         <mvcSiteMapNode title="DnD" controller="R5ArtDesign" action="DnD"/>
+        <mvcSiteMapNode title="Canvas" controller="R5ArtDesign" action="Canvas"/>
       </mvcSiteMapNode>
     </mvcSiteMapNode>
 

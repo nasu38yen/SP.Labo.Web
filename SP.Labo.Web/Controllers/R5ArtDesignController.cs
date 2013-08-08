@@ -23,5 +23,13 @@ namespace SP.Labo.Web.Controllers
         {
             return View();
         }
+
+        //
+        // GET: /R5ArtDesign/Canvas
+
+        public ActionResult Canvas()
+        {
+            return View();
+        }
     }
 }
